@@ -20,7 +20,7 @@ export class MediaService {
     });
   }
 
-  async getAllImages(
+  async getAllResources(
     limit: number,
     folderNames?: string[],
     resourceTypes?: string[],
@@ -69,7 +69,6 @@ export class MediaService {
 
       return result;
     } catch (error) {
-      console.error(error);
       throw new Error('Failed to retrieve images from Cloudinary');
     }
   }

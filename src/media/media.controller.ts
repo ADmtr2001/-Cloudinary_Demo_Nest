@@ -22,7 +22,7 @@ export class MediaController {
   constructor(private mediaService: MediaService) {}
 
   @Get()
-  async getAllImages(
+  async getAllResources(
     @Query(
       'folderNames',
       new ParseArrayPipe({ items: String, separator: ',', optional: true }),
@@ -36,7 +36,7 @@ export class MediaController {
     @Query('limit') limit = '25',
     @Query('cursor') cursor = '',
   ): Promise<GetImagesResponse> {
-    return this.mediaService.getAllImages(
+    return this.mediaService.getAllResources(
       parseInt(limit, 10),
       folderNames,
       resourceTypes,
